@@ -9,7 +9,7 @@ const input = getInput("input", {
   required: true,
 });
 
-const matchArray = input.matchAll(new RegExp(regex, "g"));
+const matchArray = input.matchAll(new RegExp(regex, "gi"));
 const matches = chain([...matchArray])
   .flatten()
   .uniq()
