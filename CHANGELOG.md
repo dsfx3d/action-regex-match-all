@@ -19,3 +19,18 @@
 - Yashodhan Singh Rathore <dsfx3d@gmail.com>
 
 
+
+
+## v1.1.0
+
+[compare changes](https://github.com/dsfx3d/action-regex-match-all/compare/v1.0.0...main)
+
+### 🚀 Enhancements
+
+- Ignore case in regex ([2407d21](https://github.com/dsfx3d/action-regex-match-all/commit/2407d21))
+
+### ❤️ Contributors
+
+- Yashodhan Singh Rathore <dsfx3d@gmail.com>
+
+
