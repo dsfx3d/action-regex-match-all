@@ -1,0 +1,16 @@
+on: workflow_dispatch
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Match Regex All
+        id: match
+        uses: ./
+        with:
+          regex: '\d'
+          input: '1.2.3'
+      - run: |
+          echo "Matched: ${{ steps.match.outputs.matches }}"
+
