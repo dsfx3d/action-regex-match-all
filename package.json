@@ -2,10 +2,6 @@
   "name": "workspace",
   "version": "0.1.0",
   "description": "",
-  "main": "index.js",
-  "scripts": {
-    "bootstrap": "pnpm update && husky install"
-  },
   "keywords": [],
   "author": "",
   "license": "MIT",
