@@ -1,0 +1,14 @@
+name: Regex Match All
+description: 'returns the list of all matches or an empty list'
+
+inputs:
+  regex:
+    type: string
+    description: 'the regex to match'
+  string:
+    type: string
+    description: 'the string to match against'
+
+runs:
+  using: node20
+  main: index.js
