@@ -1,5 +1,5 @@
 name: Regex Match All
-description: returns the list of all matches or an empty list
+description: Outputs the CSV of all unique matches or an empty list
 
 inputs:
   regex:
@@ -8,9 +8,6 @@ inputs:
   input:
     required: true
     description: the string to match against
-  transform:
-    required: false
-    description: a function to transform the matches
 
 runs:
   using: node16
