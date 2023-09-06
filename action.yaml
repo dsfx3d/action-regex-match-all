@@ -1,14 +1,22 @@
-name: Regex Match All
-description: Outputs the CSV of all unique matches or an empty list
+name: Extract Unique Matches
+description: All unique matches in comma seperated format or an empty string
 
 inputs:
   regex:
     required: true
-    description: the regex to match
+    description: The regex to match
   input:
     required: true
-    description: the string to match against
+    description: The string to match against
+
+outputs:
+  matches:
+    description: All unique matches in comma seperated format
 
 runs:
   using: node16
   main: index.js
+
+branding:
+  icon: search
+  color: yellow
