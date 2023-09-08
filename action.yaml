@@ -1,5 +1,5 @@
-name: Extract Unique Matches
-description: All unique matches in comma seperated format or an empty string
+name: Action to extract delimited unique matches from a string
+description: All unique matches in comma separated format or an empty string
 
 inputs:
   regex:
@@ -8,10 +8,18 @@ inputs:
   input:
     required: true
     description: The string to match against
+  flags:
+    required: false
+    description: The flags to use for the regex
+    default: gi
+  delimiter:
+    required: false
+    description: The delimiter to use for the output
+    default: ','
 
 outputs:
   matches:
-    description: All unique matches in comma seperated format
+    description: All unique matches in comma separated format
 
 runs:
   using: node16

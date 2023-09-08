@@ -9,8 +9,10 @@ jobs:
         id: match
         uses: ./
         with:
-          regex: '\d'
-          input: '1.2.3'
+          regex: '[a-z0-9._-]+@[a-z0-9._-]+\.[a-z0-9_-]+'
+          input: a@foo.baz\n b.a@aa.io\n b.a@aa.io
+          flags: gi
+          delimiter: '|'
       - run: |
           echo "Matched: ${{ steps.match.outputs.matches }}"
 
