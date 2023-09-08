@@ -6,22 +6,17 @@ module.exports["run"] = () => {
     required: true,
     trimWhitespace: true,
   });
-  const input = getInput("input", {
+  const text = getInput("text", {
     required: true,
   });
-  const flags =
-    getInput("flags", {
-      trimWhitespace: true,
-    }) ?? "gi";
-  const delimiter =
-    getInput("delimiter", {
-      trimWhitespace: true,
-    }) ?? ",";
+  const flags = getInput("flags", {
+    trimWhitespace: true,
+  });
 
-  const matchArray = input.matchAll(new RegExp(regex, flags));
+  const matchArray = text.matchAll(new RegExp(regex, flags));
   const matches = chain([...matchArray])
     .flatten()
     .uniq()
     .value();
-  setOutput("matches", matches.join(delimiter));
+  setOutput("matches", matches);
 };
