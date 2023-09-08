@@ -12,10 +12,6 @@ inputs:
     required: false
     description: The flags to use for the regex
     default: gi
-  delimiter:
-    required: false
-    description: The delimiter to use for the output
-    default: ','
 
 outputs:
   matches:
