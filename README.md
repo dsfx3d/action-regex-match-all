@@ -32,8 +32,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Run Action to Extract Unique Matches
+      id: match
       uses: dsfx3d/action-extract-unique-matches@v1
       with:
         regex: '[a-z0-9._-]+@[a-z0-9._-]+\.[a-z0-9_-]+'
         input: ${{ github.event.issue.body }}
+
+    - run: |
+      echo "Unique email addresses in issue body: ${{ steps.match.outputs.matches }}"
 ```
