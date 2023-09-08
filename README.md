@@ -2,7 +2,7 @@
 
 ## Description
 
-This GitHub Action extracts all unique matches from a given string based on a specified regular expression and returns them in a comma-separated format or as an empty string if no matches are found.
+This GitHub Action extracts all unique matches from a given string based on a specified regular expression and returns an array of all unique matches or an empty array if no matches are found.
 
 ## Inputs
 
