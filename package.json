@@ -1,5 +1,5 @@
 {
-  "name": "action-regex-match-all",
+  "name": "action-extract-unique-matches",
   "version": "1.0.0",
   "description": "",
   "type": "module",
