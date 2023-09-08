@@ -1,40 +1,39 @@
-# pnpm-typescript-workspace
+# Action to Extract Unique Matches from a String
 
-A pnpm workspace boilerplate for Typescript projects.
+## Description
 
-## Features
+This GitHub Action extracts all unique matches from a given string based on a specified regular expression and returns them in a comma-separated format or as an empty string if no matches are found.
 
-- Managed with `pnpm`, ensuring efficient package management.
-- ESLint configuration extending [`eslint-config-dsfx3d`](https://github.com/dsfx3d/eslint-config-dsfx3d).
-- Sample module `foo` exported in the main index.
+## Inputs
 
-## Workspace Structure
+| Name      | Description                      | Required | Default |
+|-----------|----------------------------------|----------|---------|
+| `regex`   | The regex to match               | ✅       |         |
+| `input`   | The string to match against      | ✅       |         |
+| `flags`   | The flags to use for the regex   | ❌       | `gi`    |
 
-The workspace is structured as follows:
+## Outputs
 
-- Main packages are located in the `packages/` directory.
-- Additional components can be added in the `components/` directory.
-- Packages inside `test` directories are excluded.
+| Name      | Description                                        |
+|-----------|----------------------------------------------------|
+| `matches` | An array of all unique matches or an empty array   |
 
-## Installation
+## Example Usage
 
-To set up the workspace:
+```yaml
+name: Extract Unique Matches
+on:
+  push:
+    branches:
+      - main
 
-```bash
-pnpm bootstrap
+jobs:
+  extract-matches:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Run Action to Extract Unique Matches
+      uses: dsfx3d/action-extract-unique-matches@v1
+      with:
+        regex: '[a-z0-9._-]+@[a-z0-9._-]+\.[a-z0-9_-]+'
+        input: ${{ github.event.issue.body }}
 ```
-
-## Scripts
-
-- `bootstrap`: Update packages and install Husky hooks.
-
-## Dependencies
-
-- Development:
-  - `@commitlint/cli`
-  - `@commitlint/config-conventional`
-  - `eslint`
-  - `eslint-config-dsfx3d`
-  - `husky`
-  - `prettier`
-  - `typescript`
