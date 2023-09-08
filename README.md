@@ -9,7 +9,7 @@ This GitHub Action extracts all unique matches from a given string based on a sp
 | Name      | Description                      | Required | Default |
 |-----------|----------------------------------|----------|---------|
 | `regex`   | The regex to match               | ✅       |         |
-| `input`   | The string to match against      | ✅       |         |
+| `text`   | The string to match against      | ✅       |         |
 | `flags`   | The flags to use for the regex   | ❌       | `gi`    |
 
 ## Outputs
@@ -36,7 +36,7 @@ jobs:
       uses: dsfx3d/action-extract-unique-matches@v1
       with:
         regex: '[a-z0-9._-]+@[a-z0-9._-]+\.[a-z0-9_-]+'
-        input: ${{ github.event.issue.body }}
+        text: ${{ github.event.issue.body }}
 
     - run: |
       echo "Unique email addresses in issue body: ${{ steps.match.outputs.matches }}"
