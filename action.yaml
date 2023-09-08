@@ -1,5 +1,5 @@
-name: Action to extract delimited unique matches from a string
-description: All unique matches in comma separated format or an empty string
+name: Action to extract unique matches from a string
+description: Extract all unique matches from a string using a regex
 
 inputs:
   regex:
