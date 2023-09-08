@@ -3,6 +3,9 @@ import {promisify} from "node:util";
 
 const {stdout, stderr} = await promisify(exec)(
   "npm --loglevel=error ci --no-audit --only=prod",
+  {
+    cwd: new URL(".", import.meta.url).pathname,
+  },
 );
 console.log(stdout);
 if (stderr) {
